@@ -17,30 +17,28 @@
             <?php
             include "db.php";
            
+
             $nome = $_POST['nome'];
             $endereco = $_POST['endereco'];
             $telefone = $_POST['telefone'];
             $email = $_POST['email'];
             $data_nascimento = $_POST['data_nascimento'];
 
-            // print_r($nome);
-            // print_r($endereco);
-            // print_r($telefone);
-            // print_r($email);
-            // print_r($data_nascimento);
-            
-            // exit();
 
-            $stmt = $con->prepare("INSERT INTO `public.pessoas`
-            (`nome`, `endereco`, `telefone`, `email`, `data_nascimento`) VALUES ('$nome', '$endereco', '$telefone', '$email', '$data_nascimento)");
-            $stmt->bindParam(1,"Maria");
-            $stmt->bindParam(2,"maria@gmail.com");
-            $stmt->execute();
-            
-            // return ;
+            $query = "INSERT INTO `public.pessoas`
+            (`nome`, `endereco`, `telefone`, `email`, `data_nascimento`) VALUES ('nome, 'endereco', 'telefone', 'email', 'data_nascimento ");
+            $stmt = $conn->prepare($query);
+            $stmt->execute(['nome'=> $_POST['nome']); 
+           
+            // //value o parametro
+            //execute
+            //return o objeto
+
+            // return 
             // execute() = true ou 1
             // count | objeto
             // valida se tá OK 
+
             if($query){
                 echo "$nome Cadastrado com sucesso!";
             } else 

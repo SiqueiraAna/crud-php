@@ -24,24 +24,29 @@
     <label for="nome">Nome Completo:</label>
     <input type="text" class="form-control" name="nome">
     </div>
+
     <div class="form-group">
     <label for="endereco">Endereço:</label>
     <input type="text" class="form-control" name="endereco">
     </div>
+
     <div class="form-group">
     <label for="endereco">Telefone:</label>
     <input type="text" class="form-control" name="telefone">
     </div>
+
     <div class="form-group">
     <label for="endereco">Email:</label>
     <input type="email" class="form-control" name="email">
     </div>
+
     <div class="form-group">
     <label for="endereco">Data de Nascimento:</label>
     <input type="date" class="form-control" name="dt_nascimento">
     </div>
+    
     <div class="form-group">
-    <input type="submit" class="btn btn-success">
+    <input  type="submit" class="btn btn-success">
     </div>
 </form>
               </div>
