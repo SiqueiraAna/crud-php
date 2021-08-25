@@ -13,26 +13,39 @@
   <body>
       <div class="container">
           <div class="row">
+
             <?php
             include "db.php";
-            include  "PDO_connect.php";
+           
             $nome = $_POST['nome'];
             $endereco = $_POST['endereco'];
             $telefone = $_POST['telefone'];
             $email = $_POST['email'];
             $data_nascimento = $_POST['data_nascimento'];
 
-            $pgsql = "INSERT INTO public.pessoas
-            ('nome', 'endereco', 'telefone', 'email', 'data_nascimento') VALUES ('$nome', '$endereco', '$telefone', '$email', '$data_nascimento')";
+            // print_r($nome);
+            // print_r($endereco);
+            // print_r($telefone);
+            // print_r($email);
+            // print_r($data_nascimento);
+            
+            // exit();
 
-            if(pg_query($conn,$sql)){
-
-                echo "$nome cadastrado com sucesso!";
+            $stmt = $con->prepare("INSERT INTO `public.pessoas`
+            (`nome`, `endereco`, `telefone`, `email`, `data_nascimento`) VALUES ('$nome', '$endereco', '$telefone', '$email', '$data_nascimento)");
+            $stmt->bindParam($nome);
+            $stmt->execute();
+            
+            // return ;
+            // execute() = true ou 1
+            // count | objeto
+            // valida se tá OK 
+            if($query){
+                echo "$nome Cadastrado com sucesso!";
             } else 
-                echo "$nome NÃO foi cadastrado";
-        
-
-            ?>
+                echo "$nome Não foi cadastrado";
+    
+            ?> 
 
           </div>
       </div>
