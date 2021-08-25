@@ -33,7 +33,8 @@
 
             $stmt = $con->prepare("INSERT INTO `public.pessoas`
             (`nome`, `endereco`, `telefone`, `email`, `data_nascimento`) VALUES ('$nome', '$endereco', '$telefone', '$email', '$data_nascimento)");
-            $stmt->bindParam($nome);
+            $stmt->bindParam(1,"Maria");
+            $stmt->bindParam(2,"maria@gmail.com");
             $stmt->execute();
             
             // return ;
