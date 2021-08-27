@@ -1,5 +1,5 @@
 <?php
-require_once 'db.php';
+
 
 class pessoa{
 
@@ -11,12 +11,12 @@ class pessoa{
     private $data_nascimento;
 }
 
-public function __construct($nome, $endereco, $telefone, $email, $data_nascimento = '')
-{
-    $this->nome = nome;
-    $this->endereco = endereco;
-    $this->telefone = telefone;
-    $this->email = email;
-    $this->data_nascimento = data_nascimento;
+public function __get($atributo){
+    return $this->$atributo;
+
+}
+
+public function __set($atributo, $valor){
+    $this->$atributo = $valor;
 }
 

@@ -1,7 +1,4 @@
-<?php
 
-
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,47 +9,63 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
-    <title>Cadastro</title>
+    <title>Página Inicial</title>
   </head>
   <body>
-      <div class="container">
-          <div class="row">
-              <div class="col">
-              <h1>Cadastro</h1>
-              <form action="cadastro_script.php" method="POST">
+  <div class="container">
+      <?php if (!empty($_GET['msgErro'])) { ?>
+  <div class="alert alert-warning" role="alert">
+      <?php echo $_GET['msgErro']; ?>
+
+  </div>
+        <?php } ?>
+        <?php if (!empty($_GET['msgSucesso'])) { ?>
+  <div class="alert alert-sucess" role="alert">
+        <?php echo $_GET['msgSucesso']; ?>
+  </div>
+        <?php } ?>
+  </div>
+  <div class="container">
+  <div class="row">
+  <div class="col">
+      <h1>Olá, seja Bem-Vindo(a)!!</h1><br>
+      <form action="cadastro.php" method="POST">
   <div class="form-group">
     <label for="nome">Nome Completo:</label>
     <input type="text" class="form-control" name="nome">
-    </div>
+  </div>
 
-    <div class="form-group">
+  <div class="form-group">
     <label for="endereco">Endereço:</label>
     <input type="text" class="form-control" name="endereco">
-    </div>
+  </div>
 
-    <div class="form-group">
+  <div class="form-group">
     <label for="endereco">Telefone:</label>
     <input type="text" class="form-control" name="telefone">
-    </div>
+  </div>
 
-    <div class="form-group">
+  <div class="form-group">
     <label for="endereco">Email:</label>
     <input type="email" class="form-control" name="email">
-    </div>
+  </div>
 
-    <div class="form-group">
+  <div class="form-group">
     <label for="endereco">Data de Nascimento:</label>
-    <input type="date" class="form-control" name="dt_nascimento">
-    </div>
+    <input type="date" class="form-control" name="data_nascimento">
+  </div>
     
-    <div class="form-group">
-    <input  type="submit" class="btn btn-success">
-    </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary"> Cadastrar-se</button>
+  </div>
 </form>
-              </div>
-          </div>
-      </div>
+</div>
+</div>
+</div>
 
+
+
+      
 
     <!-- Optional JavaScript; choose one of the two! -->
 
