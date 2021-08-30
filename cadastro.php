@@ -1,10 +1,36 @@
 <?php
-// echo '<pre>';
-// print_r ($_POST);
-// echo '</pre>';
-?>
+include 'db.php'; 
+if(isset($_POST['submit'])){
+    $nome=$_POST['nome'];
+    $endereco=$_POST['endereco'];
+    $telefone=$_POST['telefone'];
+    $email=$_POST['email'];
+    $data_nascimento=$_POST['data_nascimento'];
 
-<!DOCTYPE html>
+    var_dump($nome);
+
+    var_dump($endereco);
+
+    var_dump($telefone);
+
+    var_dump($email);
+
+    var_dump($data_nascimento);
+
+    $db="insert into public.pessoa (id_pessoa,nome,endereco,telefone,email,data_nascimento) 
+    values (8,$nome,$endereco,$telefone,$email,$data_nascimento')";
+    $result=pgsql_query($db,$pgsql);
+    if($result){
+      echo" Data inserted successfullhy";
+    }else{
+      die(pgsql_error($db));
+      echo" erro";
+    }
+
+}
+  
+?>
+<!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -12,64 +38,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <title>Página Inicial</title>
   </head>
   <body>
-<?php
-require_once 'db.php';
-//
+     
 
-if (!empty($_POST)){
-// Verificar se está chegando alguma coisa diferente de null(vazio)
-// Se essa condição for verdadeira, 
-// Está chegando dados por POST e então posso tentar inserir no banco
-// Obter as informações  do formulário ($_POST)
-
-  try {
-    // Preparar as informações
-    // Montar a SQL (pgsql)
-   
-    $query= $pdo->prepare ("INSERT INTO public.pessoas
-              (id_pessoa,nome, endereco, telefone, email, data_nascimento)
-            VALUES 
-              ( ':nome', ':endereco', ':telefone', ':email', ':data_nascimento')"); 
-    $stmt= $this->db->prepare($query);
-    $stmt->bindValue('');
+    <br>
     
+    <div class="container">
+    <form  method="post">
+    <div class="form-group">
+    <label>Nome</label>
+    <input type="text" class="form-control" placeholder="Nome Completo" name="nome">
+    </div>
+   <br>
+    <div class="form-group">
+    <label>Endereço</label>
+    <input type="text" class="form-control" placeholder="Endereço" name="endereco">
+    </div>
+    <br>
+    <div class="form-group">
+    <label>Telefone</label>
+    <input type="text" class="form-control" placeholder="Telefone" name="telefone">
+    </div>
+    <br>
+    <div class="form-group">
+    <label>Email</label>
+    <input type="email" class="form-control" placeholder="Telefone" name="email">
+    </div>
+    <br>
+    <div class="form-group">
+    <label>Data Nascimento</label>
+    <input type="date" class="form-control" placeholder="Data Nascimento" name="data_nascimento">
+    </div>
+    <br>
+  <button type="submit" name="submit" class="btn btn-primary">Cadastrar-se</button>
 
-    // Preparar a SQL (pdo)
-  
-
-    //Definir/Organizar os dados p/SQL
-    // $dados = array(
+ 
+</form>
+    </div>
    
-    //   ':nome' => $_POST['nome'],
-    //   ':endereco' => $_POST['endereco'],
-    //   ':telefone' => $_POST['telefone'],
-    //   ':email' => $_POST['email'],
-    //   ':data_nascimento' => $_POST['data_nascimento']
-
-    // );
-
-    // Tentar Executar a SQL (INSERT)
-    // Realizar a inserção das informações no BD (com o PHP)
-    if($stmt->execute($dados)){
-      header("Location:index.php?msgSucesso=Cadastro realizado com sucesso!");
-    }
-  } catch (PDOException $e){
-      // die($e->getMessage());
-      header("Location:index.php?msgErro=Falha ao cadastrar!");
-    
-  }
-}
- else{
-   header("Location:index.php?msgErro=Erro de acesso.");
- }
-// die();            
-           
-   
-//Redirencionar para a pagina inicial c/ mensagem de erro/sucesso          
-            
-    
+  </body>
+</html>
