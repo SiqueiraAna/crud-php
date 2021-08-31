@@ -1,5 +1,5 @@
 <?php
-include ('db.php'); 
+include 'db.php'; 
 if(isset($_POST['submit'])){
     $nome=$_POST['nome'];
     $endereco=$_POST['endereco'];
@@ -20,13 +20,11 @@ if(isset($_POST['submit'])){
     //var_dump - Vai mostrar o tipo de dado, o tamanho e o valor. 
 
     //prepara
-    $sql = $pdo->prepare ("INSERT INTO public.pessoa (id_pessoa,nome,endereco,telefone,email,data_nascimento) 
-    values (null,$nome,$endereco,$telefone,$email,$data_nascimento')");
+    $sql = $pdo->prepare("INSERT INTO public.pessoa (id_pessoa,nome,endereco,telefone,email,data_nascimento) 
+    values (null,$nome,$endereco,$telefone,$email,$data_nascimento)");
     $sql->execute([$nome,$endereco,$telefone,$email,$data_nascimento]);
     echo 'Cadastrado com sucesso';
    
-}
-  
 ?>
 <!doctype html>
 <html lang="en">
