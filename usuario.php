@@ -13,13 +13,11 @@
   </head>
   <body>
      
-
     <br>
-    
     <div class="container">
     <form action="insert.php" method="post">
     <div class="form-group">
-    <label>Nome</label>
+    <label>Nome<:/label>
     <input type="text" class="form-control" placeholder="Nome Completo" name="nome">
     </div>
    <br>
