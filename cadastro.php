@@ -1,5 +1,5 @@
 <?php
-include 'db.php'; 
+include ('db.php'); 
 if(isset($_POST['submit'])){
     $nome=$_POST['nome'];
     $endereco=$_POST['endereco'];
@@ -25,6 +25,8 @@ if(isset($_POST['submit'])){
     $sql->execute([$nome,$endereco,$telefone,$email,$data_nascimento]);
     echo 'Cadastrado com sucesso';
    
+
+  
 ?>
 <!doctype html>
 <html lang="en">
