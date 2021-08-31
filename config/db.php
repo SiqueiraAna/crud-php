@@ -1,5 +1,6 @@
 <?php
 
+
 try {
 //conexão com o banco
 //Tentando fazer a conexão

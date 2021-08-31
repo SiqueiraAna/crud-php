@@ -1,5 +1,5 @@
 <?php
-include ('db.php'); 
+include 'config/db.php';
 if(isset($_POST['submit'])){
     $nome=$_POST['nome'];
     $endereco=$_POST['endereco'];
@@ -7,25 +7,31 @@ if(isset($_POST['submit'])){
     $email=$_POST['email'];
     $data_nascimento=$_POST['data_nascimento'];
 
-    // var_dump($nome);
+    var_dump($nome);
 
-    // var_dump($endereco);
+    var_dump($endereco);
 
-    // var_dump($telefone);
+    var_dump($telefone);
 
-    // var_dump($email);
+    var_dump($email);
 
-    // var_dump($data_nascimento);
+    var_dump($data_nascimento);
 
-    //var_dump - Vai mostrar o tipo de dado, o tamanho e o valor. 
+  
 
-    //prepara
-    $sql = $pdo->prepare("INSERT INTO public.pessoa (id_pessoa,nome,endereco,telefone,email,data_nascimento) 
-    values (null,$nome,$endereco,$telefone,$email,$data_nascimento)");
-    $sql->execute([$nome,$endereco,$telefone,$email,$data_nascimento]);
-    echo 'Cadastrado com sucesso';
+  
+    $sql = $con->prepare ("INSERT INTO pessoas (nome,endereco,telefone,email,data_nascimento) values (?,?,?,?,?)");
+    $result= $sql->execute([$nome,$endereco,$telefone,$email,$data_nascimento]);
+
+    if($result){
+
+        echo 'Cadastrado com sucesso';
+    }else{
+      die('erro no cadastro');
+    }
+  
    
-
+}
   
 ?>
 <!doctype html>
@@ -64,7 +70,7 @@ if(isset($_POST['submit'])){
     <br>
     <div class="form-group">
     <label>Email</label>
-    <input type="email" class="form-control" placeholder="Telefone" name="email">
+    <input type="email" class="form-control" placeholder="email" name="email">
     </div>
     <br>
     <div class="form-group">
@@ -73,10 +79,9 @@ if(isset($_POST['submit'])){
     </div>
     <br>
   <button type="submit" name="submit" class="btn btn-primary">Cadastrar-se</button>
-
- 
 </form>
     </div>
    
   </body>
 </html>
+
