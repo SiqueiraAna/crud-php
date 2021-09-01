@@ -1,4 +1,7 @@
+<?php
 
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,35 +12,37 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
-    <title>Página Inicial</title>
+    <title>Página Inicial</title><br>
   </head>
   <body>
-     
-    <br>
+    <div style="text-align:center; font-size: 3.1em; color: #0000CD;">Olá, Seja Bem-Vindo!
+    <p>Faça seu cadastro</p></div>
+    <!-- <a href="novocadastro"  class="btn btn-primary mb-2">Novo cadastro</a> -->
+
     <div class="container">
     <form action="insert.php" method="post">
     <div class="form-group">
-    <label>Nome<:/label>
+    <label>Nome:</label>
     <input type="text" class="form-control" placeholder="Nome Completo" name="nome">
     </div>
    <br>
     <div class="form-group">
-    <label>Endereço</label>
+    <label>Endereço:</label>
     <input type="text" class="form-control" placeholder="Endereço" name="endereco">
     </div>
     <br>
     <div class="form-group">
-    <label>Telefone</label>
+    <label>Telefone:</label>
     <input type="text" class="form-control" placeholder="Telefone" name="telefone">
     </div>
     <br>
     <div class="form-group">
-    <label>Email</label>
-    <input type="email" class="form-control" placeholder="email" name="email">
+    <label>Email:</label>
+    <input type="email" class="form-control" placeholder="Email" name="email">
     </div>
     <br>
     <div class="form-group">
-    <label>Data Nascimento</label>
+    <label>Data Nascimento:</label>
     <input type="date" class="form-control" placeholder="Data Nascimento" name="data_nascimento">
     </div>
     <br>

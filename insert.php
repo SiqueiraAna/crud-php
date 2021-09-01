@@ -1,5 +1,6 @@
 <?php
 include 'config/db.php';
+
 if(isset($_POST['submit'])){
     $nome=$_POST['nome'];
     $endereco=$_POST['endereco'];
@@ -7,6 +8,7 @@ if(isset($_POST['submit'])){
     $email=$_POST['email'];
     $data_nascimento=$_POST['data_nascimento'];
 
+   
     // var_dump($nome);
 
     // var_dump($endereco);
@@ -19,13 +21,14 @@ if(isset($_POST['submit'])){
 
   
 
-  
+    // mudar a string para update, delete 
+
     $sql = $con->prepare ("INSERT INTO pessoas (nome,endereco,telefone,email,data_nascimento) values (?,?,?,?,?)");
     $result= $sql->execute([$nome,$endereco,$telefone,$email,$data_nascimento]);
 
     if($result){
-
-        echo 'Cadastrado com sucesso';
+     
+        echo '<div style="text-align:center; font-size: 2.1em; color: #0000FF;">Cadastrado com sucesso</div>';
     }else{
       die('Erro no cadastro');
     }

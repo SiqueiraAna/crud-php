@@ -41,35 +41,32 @@ if(isset($_POST['submit'])){
     <title>Página Inicial</title>
   </head>
   <body>
-     
-
-    <br>
     
-    <div class="container">
+    <div class="container my-5">
     <form  method="post">
     <div class="form-group">
     <label>Nome</label>
-    <input type="text" class="form-control" placeholder="Nome Completo" name="nome">
+    <input type="text" class="form-control" placeholder="Nome Completo" name="nome" autocomplete="off">
     </div>
    <br>
     <div class="form-group">
     <label>Endereço</label>
-    <input type="text" class="form-control" placeholder="Endereço" name="endereco">
+    <input type="text" class="form-control" placeholder="Endereço" name="endereco" autocomplete="off">
     </div>
     <br>
     <div class="form-group">
     <label>Telefone</label>
-    <input type="text" class="form-control" placeholder="Telefone" name="telefone">
+    <input type="text" class="form-control" placeholder="Telefone" name="telefone" autocomplete="off">
     </div>
     <br>
     <div class="form-group">
     <label>Email</label>
-    <input type="email" class="form-control" placeholder="Telefone" name="email">
+    <input type="email" class="form-control" placeholder="Telefone" name="email" autocomplete="off">
     </div>
     <br>
     <div class="form-group">
     <label>Data Nascimento</label>
-    <input type="date" class="form-control" placeholder="Data Nascimento" name="data_nascimento">
+    <input type="date" class="form-control" placeholder="Data Nascimento" name="data_nascimento " autocomplete="off">
     </div>
     <br>
   <button type="submit" name="submit" class="btn btn-primary">Cadastrar-se</button>
