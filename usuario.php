@@ -1,6 +1,5 @@
 <?php
 
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -15,6 +14,7 @@
     <title>Página Inicial</title><br>
   </head>
   <body>
+
     <div style="text-align:center; font-size: 3.1em; color: #0000CD;">Olá, Seja Bem-Vindo!
     <p>Faça seu cadastro</p></div>
     <!-- <a href="novocadastro"  class="btn btn-primary mb-2">Novo cadastro</a> -->
