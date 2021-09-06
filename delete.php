@@ -2,21 +2,13 @@
 // incluindo o arquivo de conexão do banco de dados
 include 'config/db.php';
 
-if(isset($_POST['deleteid_pessoa'])){
-    $id_pessoa=$_POST['deleteid_pessoa'];
-   
-
-        // redirecionando para a página de exibição (display.php no nosso caso)
-        header("Location: display.php");
-    
-    
-     
+if(isset($_GET['id_pessoa'])){
+    $id_pessoa=$_GET['id_pessoa'];
 
     
-    // $sql = $con->query("DELETE FROM pessoas WHERE id_pessoa=01");
-    // if($sql){
-    //     echo "Delete com sucesso";
-    //   } else {
-    //     echo "Error updating record: " . $con->error;
-}
-    
+ 
+    $sql = $con->query("DELETE FROM pessoas WHERE id_pessoa=id_pessoa");
+    $statement = $con->prepare($sql);
+    $statement->execute([':id_pessoa' => $id_pessoa])
+
+       header('location:display.php');

@@ -13,10 +13,8 @@ include 'config/db.php';
 </head>
 <body>
 <div class="container">
-    <button class="btn btn-primary my-5"> <a href="usuario.php"  class="text-light"> Novo cadastro</a></button>
-    <button class="btn btn-primary my-5"> <a href="update.php" class="text-light"> </a>Update</button>
-    <button class="btn btn-danger my-5"> <a href="delete.php?deleteid_pessoa=' .$id_pessoa.'" class="text-light"> </a>Delete</button>
-
+    <button class="btn btn-primary my-5"> <a href="usuario.php"  class="text-light"> Add New Users</a></button>
+  
     <table class="table">
   <thead>
     <tr> 
@@ -26,6 +24,7 @@ include 'config/db.php';
       <th>Email</th>
       <th>Data Nascimento</th>
       <th>Ações</th>
+      
     </tr>
   </thead>
   <tbody>
@@ -38,16 +37,20 @@ include 'config/db.php';
 
 
    foreach($rows as $row) {
+
+    
        echo "<tr>";
+
        echo("<td>".$row["nome"]."</td>");
        echo("<td>".$row["endereco"]."</td>");
        echo("<td>".$row["telefone"]."</td>");
        echo("<td>".$row["email"]."</td>");
        echo("<td>".$row["data_nascimento"].  "</td>");  
-       echo("<td>".$row[""].  "</td>");  
+   
       
        echo "</tr>";
 
+       
        //echo $row['nome']; 
    }
 //    for ($i = 1; $i <= count($row); $i++) {
@@ -57,13 +60,16 @@ include 'config/db.php';
 //         //var_dump($row);
 //         //exit();   
 //     }
+
+  
     ?>
 
    
 
-    
   </tbody>
 </table>
+<a href="update.php" class="btn btn-primary btn-xs">Update</a>
+<a href="delete.php"  class="btn btn-danger btn-xs">Delete</a>
 </div>
 </body>
 </html>
