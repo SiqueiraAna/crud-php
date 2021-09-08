@@ -11,5 +11,6 @@ if(isset($_POST['update'])){
     $sql = $con->prepare('UPDATE pessoas WHERE id_pessoa = :id_pessoa');
     $stmt->execute(array(
     ':id_pessoa'   => $id_pessoa
+    
     header('location:display.php');
   ));

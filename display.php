@@ -13,9 +13,9 @@ include 'config/db.php';
 </head>
 <body>
 <div class="container">
-    <button class="btn btn-primary my-5"> <a href="usuario.php"  class="text-light"> Add New Users</a></button>
-  
-    <table class="table">
+    <button class="btn btn-primary my-4"> <a href="usuario.php" class="text-light"> Add New Users</a></button>
+
+    <table class="table ">
   <thead>
     <tr> 
       <th>Nome</th>
@@ -24,6 +24,8 @@ include 'config/db.php';
       <th>Email</th>
       <th>Data Nascimento</th>
       <th>Ações</th>
+      <th></th>
+    
       
     </tr>
   </thead>
@@ -39,37 +41,27 @@ include 'config/db.php';
    foreach($rows as $row) {
 
     
-       echo "<tr>";
+       echo "<tr>";  // abre uma linha
 
        echo("<td>".$row["nome"]."</td>");
        echo("<td>".$row["endereco"]."</td>");
        echo("<td>".$row["telefone"]."</td>");
        echo("<td>".$row["email"]."</td>");
-       echo("<td>".$row["data_nascimento"].  "</td>");  
-   
+       echo("<td>".$row["data_nascimento"]."</td>"); 
+       echo '<td><button class="btn btn-primary btn-xs"><a href="update.php?id_pessoa='.$row['id_pessoa'].'" class="text-light">Update </a></button></td>';
+       echo '<td><button class="btn btn-danger  btn-xs"><a href="delete.php?id_pessoa='.$row['id_pessoa'].'" class="text-light">Delete </a></button></td>';
+       echo "</tr>"; // fecha linha
+
       
-       echo "</tr>";
-
-       
-       //echo $row['nome']; 
    }
-//    for ($i = 1; $i <= count($row); $i++) {
 
-//         echo("<th>".$row["nome"]."</th>");
-
-//         //var_dump($row);
-//         //exit();   
-//     }
-
-  
     ?>
 
-   
 
   </tbody>
 </table>
-<a href="update.php" class="btn btn-primary btn-xs">Update</a>
-<a href="delete.php"  class="btn btn-danger btn-xs">Delete</a>
+<!-- <a href="update.php" class="btn btn-primary btn-xs">Update</a>
+<a href="delete.php"  class="btn btn-danger btn-xs">Delete</a> -->
 </div>
 </body>
 </html>
