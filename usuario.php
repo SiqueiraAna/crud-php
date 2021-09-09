@@ -12,6 +12,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <title>Página Inicial</title><br>
+    <script>
+    function funcao1()
+    {
+    alert("Cadastrado efetuado com sucesso!");
+    }
+    </script>
+    
   </head>
   <body>
 
@@ -46,7 +53,7 @@
     <input type="date" class="form-control" placeholder="Data Nascimento" name="data_nascimento">
     </div>
     <br>
-  <button type="submit" name="submit" class="btn btn-primary">Cadastrar-se</button>
+  <button type="submit" name="submit" class="btn btn-primary" onclick="funcao1()">Cadastrar-se</button>
 </form>
     </div>
    

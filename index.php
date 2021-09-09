@@ -7,15 +7,15 @@ if(isset($_POST['submit'])){
     $email=$_POST['email'];
     $data_nascimento=$_POST['data_nascimento'];
 
-    var_dump($nome);
+    // var_dump($nome);
 
-    var_dump($endereco);
+    // var_dump($endereco);
 
-    var_dump($telefone);
+    // var_dump($telefone);
 
-    var_dump($email);
+    // var_dump($email);
 
-    var_dump($data_nascimento);
+    // var_dump($data_nascimento);
 
     //var_dump - Vai mostrar o tipo de dado, o tamanho e o valor. 
 

@@ -18,7 +18,7 @@ if(isset($_POST['submit'])){
 
     if($result){
      header('location:display.php');
-        // echo '<div style="text-align:center; font-size: 2.1em; color: #0000FF;">Cadastrado com sucesso</div>';
+        echo '<div style="text-align:center; font-size: 2.1em; color: #0000FF;">Cadastrado com sucesso</div>';
     }else{
       die('Erro no cadastro');
     }
