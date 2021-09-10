@@ -5,6 +5,11 @@ $id_pessoa=$_GET['updateid_pessoa'];
 // $sql="SELECT * FROM `pessoas` where id_pessoa=$id_pessoa";
 // $result=query($con,$sql);
 // $rows = $statement->fetchall(PDO::FETCH_ASSOC);
+  //  $nome=$row['nome'];
+  //  $endereco=$row['endereco'];
+  //  $telefone=$row['telefone'];
+  //  $email=$row['email'];
+  //  $data_nascimento=$row['data_nascimento'];
 
 if(isset($_POST['submit'])){
     $nome=$_POST['nome'];
@@ -26,7 +31,7 @@ if(isset($_POST['submit'])){
         die(query($con));
     }
   
-   
+
 }
 
 ?>
