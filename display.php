@@ -40,10 +40,9 @@ include 'config/db.php';
 
 
    foreach($rows as $row) {
-    // $date = new DateTime($row["data_nascimento"]);
     
-    // echo $date->format('d/m/Y');
-
+    
+    // echo ;
 
     // exit();
        echo "<tr class='table-light'>";  // abre uma linha
@@ -52,11 +51,9 @@ include 'config/db.php';
        echo("<td>".$row["endereco"]."</td>");
        echo("<td>".$row["telefone"]."</td>");
        echo("<td>".$row["email"]."</td>");
-       
-       echo("<td>" .$row["data_nascimento"]."</td>"); 
-
-       echo '<td><button class="btn btn-success btn-xs"><a href="update.php?id_pessoa='.$row['id_pessoa'].'" class="text-light">Update </a></button></td>';
-       echo '<td><button class="btn btn-danger  btn-xs"><a href="delete.php?id_pessoa='.$row['id_pessoa'].'" class="text-light">Delete </a></button></td>';
+       echo("<td>" .(new DateTime($row["data_nascimento"]))->format('d/m/Y')."</td>"); 
+       echo '<td><button class="btn btn-success btn-xs"><a href="update.php?updateid='.$row['id_pessoa'].'" class="text-light">Update </a></button></td>';
+       echo '<td><button class="btn btn-danger  btn-xs"><a href="delete.php?deleteid='.$row['id_pessoa'].'" class="text-light">Delete </a></button></td>';
        echo "</tr>";  // fecha linha
 
       

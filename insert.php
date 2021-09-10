@@ -1,6 +1,6 @@
 <?php
 include 'config/db.php';
-
+$message = '';
 if(isset($_POST['submit'])){
     $nome=$_POST['nome'];
     $endereco=$_POST['endereco'];
@@ -18,7 +18,7 @@ if(isset($_POST['submit'])){
 
     if($result){
      header('location:display.php');
-        echo '<div style="text-align:center; font-size: 2.1em; color: #0000FF;">Cadastrado com sucesso</div>';
+        $message = 'Cadastrado com sucesso';
     }else{
       die('Erro no cadastro');
     }
