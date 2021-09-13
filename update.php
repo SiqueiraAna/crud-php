@@ -1,17 +1,12 @@
 <?php
 include 'config/db.php';
-$id_pessoa=$_GET['updateid_pessoa'];
+$id_pessoa = $_GET['updateid_pessoa'];
 
-// $sql="SELECT * FROM `pessoas` where id_pessoa=$id_pessoa";
-// $result=query($con,$sql);
-// $rows = $statement->fetchall(PDO::FETCH_ASSOC);
-  //  $nome=$row['nome'];
-  //  $endereco=$row['endereco'];
-  //  $telefone=$row['telefone'];
-  //  $email=$row['email'];
-  //  $data_nascimento=$row['data_nascimento'];
+$statement =$con->query("SELECT * FROM pessoas");
+$rows = $statement->fetchall(PDO::FETCH_ASSOC);
 
 if(isset($_POST['submit'])){
+  $id_pessoa = isset($_POST['id_pessoa']) ? $_POST['id_pessoa'] : null;
     $nome=$_POST['nome'];
     $endereco=$_POST['endereco'];
     $telefone=$_POST['telefone'];
@@ -19,17 +14,22 @@ if(isset($_POST['submit'])){
     $data_nascimento=$_POST['data_nascimento'];
 
 
-    $sql = $con->prepare ("update`pessoas` set id_pessoa='$id_pessoa', nome='$nome',endereco='$endereco', 
-    telefone='$telefone', email='$email', data_nascimento='$data_nascimento' where id_pessoa=$id_pessoa");
-    $result=query($con,$sql);
 
-    if($result){
-      echo "update com sucesso";
-     header('location:display.php');
+    $statement =$con->query("update`pessoas` set id_pessoa='$id_pessoa', nome='$nome',endereco='$endereco', 
+    telefone='$telefone', email='$email', data_nascimento='$data_nascimento' where id_pessoa=:id_pessoa");
+    $rows = $statement->fetchall(PDO::FETCH_ASSOC);
+
+    // $sql = $con->prepare ("update`pessoas` set id_pessoa='$id_pessoa', nome='$nome',endereco='$endereco', 
+    // telefone='$telefone', email='$email', data_nascimento='$data_nascimento' where id_pessoa=$id_pessoa");
+    // $result=query($con,$sql);
+
+    // if($result){
+    //   echo "update com sucesso";
+    //  header('location:display.php');
        
-    }else{
-        die(query($con));
-    }
+    // }else{
+    //     die(query($con));
+    // }
   
 
 }
