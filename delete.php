@@ -1,35 +1,18 @@
 <?php
 // incluindo o arquivo de conexão do banco de dados
 include 'config/db.php';
+//recuperar o valor de um diretorio que estou passando pela url.
+$id_pessoa = ($_GET['deleteid_pessoa'] != '' ? $_GET['deleteid_pessoa'] : $id_pessoa );
 
-public function delete($id_pessoa){
+var_dump($id_pessoa);
 
-    $id = isset($_GET['id_pessoa']) ? $_GET['id_pessoa'] : null;
 
-// valida o ID
-if (empty($id_pessoa))
-{
-    echo "ID não informado";
-    exit;
-}
-
-// remove do banco
-$PDO = con();
+$pdo = $con;
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $sql = "DELETE FROM pessoas WHERE id_pessoa = :id_pessoa";
-$stmt->bindParam(':id_pessoa', $id_pessoa); // this time, we'll use the bindParam method
-$stmt->execute();
+$q = $pdo->prepare($sql);
+$q->execute(array($id_pessoa));
+header("Location: display.php");
  
-if ($stmt->execute())
-{
-    header('Location: index.php');
-}
-else
-{
-    echo "Erro ao remover";
-    print_r($stmt->errorInfo());
-}
-
-}
-
 
 ?>

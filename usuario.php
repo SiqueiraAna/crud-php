@@ -1,18 +1,19 @@
 <?php
 include 'config/db.php';
 
-
-if( isset($_POST['delete'])){
-  $sql = "DELETE FROM pessoas WHERE id_pessoa=" . $_POST['id_pessoa'];
-  if($con->query($sql) === TRUE){
-      echo "<div class='alert alert-success'>Successfully delete user</div>";
-  }
-}
+      
+// if( isset($_POST['delete'])){
+//   $sql = "DELETE FROM pessoas WHERE id_pessoa=" . $_POST['id_pessoa'];
+//   if($con->query($sql) === TRUE){
+//       echo "<div class='alert alert-success'>Successfully delete user</div>";
+//   }
+// }
 
 ?>
 <!doctype html>
 <html lang="en">
-  <head>
+
+  <head> 
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,11 +30,10 @@ if( isset($_POST['delete'])){
     </script>
     
   </head>
-  <body>
-
+  <body> 
     <div style="text-align:center; font-size: 3.1em; color: #0000CD;">Olá, Seja Bem-Vindo!
     <p>Faça seu cadastro</p></div>
-    <!-- <a href="novocadastro"  class="btn btn-primary mb-2">Novo cadastro</a> -->
+
 
     <div class="container">
     <form action="insert.php" method="post">

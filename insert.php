@@ -1,6 +1,6 @@
 <?php
 include 'config/db.php';
-$message = '';
+
 if(isset($_POST['submit'])){
     $nome=$_POST['nome'];
     $endereco=$_POST['endereco'];

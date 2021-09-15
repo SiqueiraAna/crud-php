@@ -1,11 +1,11 @@
 <?php
 include ('db.php'); 
-if(isset($_POST['submit'])){
-    $nome=$_POST['nome'];
-    $endereco=$_POST['endereco'];
-    $telefone=$_POST['telefone'];
-    $email=$_POST['email'];
-    $data_nascimento=$_POST['data_nascimento'];
+// if(isset($_POST['submit'])){
+//     $nome=$_POST['nome'];
+//     $endereco=$_POST['endereco'];
+//     $telefone=$_POST['telefone'];
+//     $email=$_POST['email'];
+//     $data_nascimento=$_POST['data_nascimento'];
 
     // var_dump($nome);
 
@@ -30,6 +30,7 @@ if(isset($_POST['submit'])){
 ?>
 <!doctype html>
 <html lang="en">
+
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -40,6 +41,7 @@ if(isset($_POST['submit'])){
 
     <title>Página Inicial</title>
   </head>
+
   <body>
     
     <div class="container my-5">
@@ -49,31 +51,32 @@ if(isset($_POST['submit'])){
     <input type="text" class="form-control" placeholder="Nome Completo" name="nome" autocomplete="off">
     </div>
    <br>
+
     <div class="form-group">
     <label>Endereço</label>
     <input type="text" class="form-control" placeholder="Endereço" name="endereco" autocomplete="off">
-    </div>
-    <br>
+    </div><br>
+
     <div class="form-group">
     <label>Telefone</label>
     <input type="text" class="form-control" placeholder="Telefone" name="telefone" autocomplete="off">
-    </div>
-    <br>
+    </div><br>
+
     <div class="form-group">
     <label>Email</label>
     <input type="email" class="form-control" placeholder="Telefone" name="email" autocomplete="off">
-    </div>
-    <br>
+    </div><br>
+
     <div class="form-group">
     <label>Data Nascimento</label>
     <input type="date" class="form-control" placeholder="Data Nascimento" name="data_nascimento " autocomplete="off">
-    </div>
-    <br>
-  <button type="submit" name="submit" class="btn btn-primary">Cadastrar-se</button>
+    </div><br>
+
+    <button type="submit" name="submit" class="btn btn-primary">Cadastrar-se</button>
 
  
 </form>
-    </div>
+  </div>
    
   </body>
 </html>
