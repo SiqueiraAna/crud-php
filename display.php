@@ -1,4 +1,5 @@
 <?php
+//chama o arquivo de conexão com o bd
 include 'config/db.php';
 
 ?>
@@ -9,14 +10,17 @@ include 'config/db.php';
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <Title>Display</Title>
-    <script>
-    function funcao2()
-    {
-    alert("Excluido com sucesso!");
-    }
-    </script>
+
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script>
+    function alertMessage()
+    {
+  alert("Tem certeza que deseja excluir?");
+   
+    }
+    </script>
 </head>
 <body>
 <div class="container">
@@ -57,8 +61,8 @@ include 'config/db.php';
        echo("<td>".$row["telefone"]."</td>");
        echo("<td>".$row["email"]."</td>");
        echo("<td>" .(new DateTime($row["data_nascimento"]))->format('d/m/Y')."</td>"); 
-       echo '<td><button class="btn btn-success btn-xs"><a href="update.php?updateid_pessoa='.$row['id_pessoa'].'" class="text-light">Update</a></button></td>';
-       echo '<td><button class="btn btn-danger name="id_pessoa" btn-xs"><a href="delete.php?deleteid_pessoa='.$row['id_pessoa'].'"class="text-light">Delete</a></button></td>';
+       echo '<td><button class="btn btn-success btn-xs" name="id_pessoa" ><a onclick="alertMessage()" href="update.php?updateid_pessoa='.$row['id_pessoa'].'" class="text-light">Update</a></button></td>';
+       echo '<td><button class="btn btn-danger btn-xs" name="id_pessoa" ><a onclick="alertMessage()"  href="delete.php?deleteid_pessoa='.$row['id_pessoa'].'"class="text-light">Delete</a></button></td>';
         
        echo "</tr>";  // fecha linha
 

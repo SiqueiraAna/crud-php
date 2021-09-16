@@ -1,6 +1,8 @@
 <?php
+//chama o arquivo de conexão com o bd
 include 'config/db.php';
 
+//Metodo para inclusão de novos registros  
 if(isset($_POST['submit'])){
     $nome=$_POST['nome'];
     $endereco=$_POST['endereco'];
