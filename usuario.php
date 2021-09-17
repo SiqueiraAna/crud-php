@@ -62,7 +62,7 @@ include 'config/db.php';
     <input type="date" class="form-control" placeholder="Data Nascimento" name="data_nascimento">
     </div>
     <br>
-  <button type="submit" name="submit" class="btn btn-primary" onclick="funcao1()">Cadastrar-se</button>
+  <button type="submit" name="submit" class="btn btn-primary" onclick="funcao1()">Salvar</button>
 </form>
     </div>
    
