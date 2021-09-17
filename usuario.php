@@ -49,7 +49,7 @@ include 'config/db.php';
     <br>
     <div class="form-group">
     <label>Telefone:</label>
-    <input type="text" class="form-control" placeholder="Telefone" name="telefone">
+    <input type="number" class="form-control" placeholder="Telefone" name="telefone">
     </div>
     <br>
     <div class="form-group">
