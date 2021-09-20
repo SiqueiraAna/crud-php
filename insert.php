@@ -13,7 +13,7 @@ if(isset($_POST['submit'])){
     // var_dump($nome);
 
 
-    // mudar a string para update, delete 
+   
 
     $sql = $con->prepare ("INSERT INTO pessoas (nome,endereco,telefone,email,data_nascimento) values (?,?,?,?,?)");
     $result= $sql->execute([$nome,$endereco,$telefone,$email,$data_nascimento]);

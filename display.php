@@ -17,8 +17,11 @@ include 'config/db.php';
     <script>
     function alertMessage()
     {
-      alert("Tem certeza que deseja excluir?");
-   
+      if (confirm("Tem certeza que deseja excluir?")){
+        return false;
+      }
+
+      
     }
     </script>
 </head>
@@ -44,8 +47,8 @@ include 'config/db.php';
   <tbody>
       
     <?php
-    $statement =$con->query("SELECT * FROM pessoas");
-    $rows = $statement->fetchall(PDO::FETCH_ASSOC);
+    $sql =$con->query("SELECT * FROM pessoas");
+    $rows = $sql->fetchall(PDO::FETCH_ASSOC);
 //    var_dump($rows);
 
     // print_r($rows);
@@ -62,7 +65,7 @@ include 'config/db.php';
        echo("<td>".$row["email"]."</td>");
        echo("<td>" .(new DateTime($row["data_nascimento"]))->format('d/m/Y')."</td>"); 
        echo '<td><button class="btn btn-success btn-xs" name="id_pessoa" ><a onclick="funcao2" href="update.php?id_pessoa='.$row['id_pessoa'].'" class="text-light">Update</a></button></td>';
-       echo '<td><button class="btn btn-danger btn-xs" name="id_pessoa" ><a onclick="funcao1" href="delete.php?deleteid_pessoa='.$row['id_pessoa'].'"class="text-light">Delete</a></button></td>';
+       echo '<td><button class="btn btn-danger btn-xs" name="id_pessoa" ><a onclick="alertMessage()" href="delete.php?deleteid_pessoa='.$row['id_pessoa'].'"class="text-light">Delete</a></button></td>';
         
        echo "</tr>";  // fecha linha
 

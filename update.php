@@ -1,17 +1,29 @@
 <?php
 //chama o arquivo de conexão com o bd
 include 'config/db.php';
+
+//código de inserir
 if(isset($_GET["id_pessoa"])){
+
 $id_pessoa = $_GET['id_pessoa'];
 
 // var_dump($id_pessoa);
 
 $pdo = $con;
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+//fazer a consulta sql
 $sql = "SELECT * FROM pessoas WHERE id_pessoa= :id_pessoa";
+
+//preparar a consulta
 $sql = $pdo->prepare($sql);
+
 $sql->bindParam(':id_pessoa', $id_pessoa);
+
+// pdo execute a consulta
 $result = $sql->execute(array($id_pessoa));
+
+//buscar tudo 
 $rows= $sql->fetchAll(PDO::FETCH_ASSOC);
 }
 
@@ -23,16 +35,10 @@ if(isset($_POST['submit'])){
   $data_nascimento=$_POST['data_nascimento'];
 
 
-  $sql = "UPDATE `pessoas` SET 'nome'='$nome', 'endereco'='$endereco', 'telefone'='$telefone', 'email'='$email', 'data_nascimento'='$data_nascimento' WHERE 'id_pessoa'='id_pessoa'";
+  $sql = $con->prepare("UPDATE `pessoas` SET 'nome'='$nome', 'endereco'='$endereco', 'telefone'='$telefone', 'email'='$email', 'data_nascimento'='$data_nascimento' WHERE 'id_pessoa'='id_pessoa'");
   $result = $pdo->query($con);
 
-  // if ($result->query($con) === TRUE) {
-  //   echo "Update foi realizado com sucesso!";
-  //   header('Location:display.php');
-  // } else {
-  //   echo "Erro no  " . $con->error;
-  // }
-  
+ 
 }
 
 ?>
@@ -62,7 +68,7 @@ if(isset($_POST['submit'])){
     <div style="text-align:center; font-size: 3.1em; color: #A52A2A;">Atualize o seu cadastro!</div>
 
     <div class="container">
-    <form  method="post">
+    <form  method="POST">
     <div class="form-group">
     <label>Nome:</label>
     <input type="text" class="form-control" placeholder="Nome Completo" name="nome" value="<?php echo($rows[0]["nome"])?>">
