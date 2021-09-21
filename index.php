@@ -1,31 +1,5 @@
 <?php
 include ('db.php'); 
-// if(isset($_POST['submit'])){
-//     $nome=$_POST['nome'];
-//     $endereco=$_POST['endereco'];
-//     $telefone=$_POST['telefone'];
-//     $email=$_POST['email'];
-//     $data_nascimento=$_POST['data_nascimento'];
-
-    // var_dump($nome);
-
-    // var_dump($endereco);
-
-    // var_dump($telefone);
-
-    // var_dump($email);
-
-    // var_dump($data_nascimento);
-
-    //var_dump - Vai mostrar o tipo de dado, o tamanho e o valor. 
-
-    // //prepara
-    // $sql = $pdo->prepare ("INSERT INTO public.pessoa (id_pessoa,nome,endereco,telefone,email,data_nascimento) 
-    // values (null,$nome,$endereco,$telefone,$email,$data_nascimento)");
-    // $sql->execute([$nome,$endereco,$telefone,$email,$data_nascimento]);
-    // echo 'Cadastrado com sucesso';
-   
-
   
 ?>
 <!doctype html>

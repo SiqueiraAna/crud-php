@@ -1,14 +1,6 @@
 <?php
 include 'config/db.php';
 
-      
-// if( isset($_POST['delete'])){
-//   $sql = "DELETE FROM pessoas WHERE id_pessoa=" . $_POST['id_pessoa'];
-//   if($con->query($sql) === TRUE){
-//       echo "<div class='alert alert-success'>Successfully delete user</div>";
-//   }
-// }
-
 ?>
 <!doctype html>
 <html lang="en">

@@ -9,7 +9,7 @@ include 'config/db.php';
     <meta charset=UTF-8>
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <Title>Display</Title>
+    <Title>Lista</Title>
 
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@ include 'config/db.php';
 </head>
 <body>
 <div class="container">
-    <button class="btn btn-secondary my-4"> <a href="usuario.php" 
+    <button class="btn btn-success my-4"> <a href="usuario.php" 
     class="text-light"> Add Novo Cadastro</a>
     </button>
     
@@ -64,7 +64,7 @@ include 'config/db.php';
        echo("<td>".$row["telefone"]."</td>");
        echo("<td>".$row["email"]."</td>");
        echo("<td>" .(new DateTime($row["data_nascimento"]))->format('d/m/Y')."</td>"); 
-       echo '<td><button class="btn btn-success btn-xs" name="id_pessoa" ><a onclick="funcao2" href="update.php?id_pessoa='.$row['id_pessoa'].'" class="text-light">Update</a></button></td>';
+       echo '<td><button class="btn btn-warning btn-xs" name="id_pessoa" ><a onclick="funcao2()" href="update.php?updateid_pessoa='.$row['id_pessoa'].'" class="text-light">Update</a></button></td>';
        echo '<td><button class="btn btn-danger btn-xs" name="id_pessoa" ><a onclick="alertMessage()" href="delete.php?deleteid_pessoa='.$row['id_pessoa'].'"class="text-light">Delete</a></button></td>';
         
        echo "</tr>";  // fecha linha

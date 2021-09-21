@@ -10,19 +10,15 @@ if(isset($_POST['submit'])){
     $email=$_POST['email'];
     $data_nascimento=$_POST['data_nascimento'];
 
-    // var_dump($nome);
-
-
-   
-
+    
     $sql = $con->prepare ("INSERT INTO pessoas (nome,endereco,telefone,email,data_nascimento) values (?,?,?,?,?)");
     $result= $sql->execute([$nome,$endereco,$telefone,$email,$data_nascimento]);
 
     if($result){
-     header('location:display.php');
+      header("Location:listar.php");
         $message = 'Cadastrado com sucesso';
     }else{
-      die('Erro no cadastro');
+      die('Não ');
     }
   
    
