@@ -5,26 +5,20 @@ include 'config/db.php';
 ?>
 <!doctype html>
 <html lang="en">
+
 <head>
+
     <meta charset=UTF-8>
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <Title>Lista</Title>
 
-    
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <script>
-    function alertMessage()
-    {
-      if (confirm("Tem certeza que deseja excluir?")){
-        return false;
-      }
-
-      
-    }
-    </script>
+    <Title>Lista</Title>
+    
 </head>
+
 <body>
 <div class="container">
     <button class="btn btn-success my-4"> <a href="usuario.php" 
@@ -47,16 +41,12 @@ include 'config/db.php';
   <tbody>
       
     <?php
-    $sql =$con->query("SELECT * FROM pessoas");
+    $sql =$con->query("SELECT * FROM pessoas order by id_pessoa ASC");
     $rows = $sql->fetchall(PDO::FETCH_ASSOC);
-//    var_dump($rows);
-
-    // print_r($rows);
-  
 
    foreach($rows as $row) {
     
-       echo "<form action='' method='POST'>";
+  
        echo "<tr class='table-light'>";  // abre uma linha
        echo("<td>".$row["id_pessoa"]."</td>");
        echo("<td>".$row["nome"]."</td>");

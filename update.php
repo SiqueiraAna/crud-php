@@ -28,19 +28,13 @@
         
         <title>Update</title><br>
         
-        <script>
-        function alertMenssage()
-        {
-        !alert("Tem certeza que deseja atualizar?");
-        }
-        </script>
       
       </head>
       <body> 
         <div style="text-align:center; font-size: 3.1em; color: #A52A2A;">Atualize o seu cadastro!</div>
 
         <div class="container">
-        <form action="listar.php" method="POST">
+        <form action="atualizar.php" method="POST">
         <div class="form-group">
         <label>Nome:</label>
         <input type="text" class="form-control" placeholder="Nome Completo" name="nome" value="<?php echo($rows[0]["nome"])?>">
@@ -66,7 +60,8 @@
         <input type="date" class="form-control" placeholder="Data Nascimento" name="data_nascimento" value="<?php echo($rows[0]["data_nascimento"])?>">
         </div>
         <br>
-      <button type="submit" name="submit" class="btn btn-danger" onclick="alertMenssage()">Update</button>
+        <input type="hidden" name="id_pessoa" value="<?php echo($rows[0]["id_pessoa"])?>" />  
+      <button type="submit" name="submit" class="btn btn-danger">Update</button>
     </form>
         </div>
 
