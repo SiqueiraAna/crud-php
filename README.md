@@ -1,4 +1,4 @@
-# Projeto CRUD utilizando PHP PDO e PostgreSql. 
+# Projeto CRUD utilizando PHP PDO e PostgreSQL. 
 
 
 
