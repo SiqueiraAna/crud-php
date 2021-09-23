@@ -13,6 +13,8 @@ $sql = "DELETE FROM pessoas WHERE id_pessoa = :id_pessoa";
 $sql = $pdo->prepare($sql);
 $sql->execute(array($id_pessoa));
 
+
+
 header("Location:listar.php"); // redirecionamento de página 
  
 

@@ -2,6 +2,9 @@
 //chama o arquivo de conexão com o bd
 include 'config/db.php';
 
+$sql =$con->query("SELECT * FROM pessoas order by id_pessoa ASC");
+$rows = $sql->fetchall(PDO::FETCH_ASSOC);
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -16,7 +19,19 @@ include 'config/db.php';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <Title>Lista</Title>
-    
+
+    <script>
+      function Alert(){
+      if(confirm("Tem certeza que deseja deletar?")){
+        window.location.href= "delete.php?deleteid_pessoa=<?php echo($rows[0]["id_pessoa"])?>";
+      }else{
+        return false;
+      } 
+
+      }
+
+    </script>
+
 </head>
 
 <body>
@@ -46,7 +61,6 @@ include 'config/db.php';
 
    foreach($rows as $row) {
     
-  
        echo "<tr class='table-light'>";  // abre uma linha
        echo("<td>".$row["id_pessoa"]."</td>");
        echo("<td>".$row["nome"]."</td>");
@@ -54,14 +68,13 @@ include 'config/db.php';
        echo("<td>".$row["telefone"]."</td>");
        echo("<td>".$row["email"]."</td>");
        echo("<td>" .(new DateTime($row["data_nascimento"]))->format('d/m/Y')."</td>"); 
-       echo '<td><button class="btn btn-warning btn-xs" name="id_pessoa" ><a onclick="funcao2()" href="update.php?updateid_pessoa='.$row['id_pessoa'].'" class="text-light">Update</a></button></td>';
-       echo '<td><button class="btn btn-danger btn-xs" name="id_pessoa" ><a onclick="alertMessage()" href="delete.php?deleteid_pessoa='.$row['id_pessoa'].'"class="text-light">Delete</a></button></td>';
+       echo '<td><button class="btn btn-warning btn-xs" name="id_pessoa" ><a " href="update.php?updateid_pessoa='.$row['id_pessoa'].'" class="text-light">Update</a></button></td>';
+       echo '<td><button class="btn btn-danger btn-xs" name="id_pessoa" ><a " onclick="Alert()" "class="text-light">Delete</a></button></td>';
         
        echo "</tr>";  // fecha linha
 
    }
    
-
     ?>
 
   </tbody>
