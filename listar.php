@@ -1,15 +1,15 @@
 <?php
-//chama o arquivo de conexão com o bd
+//chama o arquivo de conexão com o Banco de dados
 include 'config/db.php';
 
 $sql =$con->query("SELECT * FROM pessoas order by id_pessoa ASC");
 $rows = $sql->fetchall(PDO::FETCH_ASSOC);
 
 ?>
-<!doctype html>
-<html lang="en">
+  <!doctype html>
+  <html lang="en">
 
-<head>
+  <head>
 
     <meta charset=UTF-8>
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
@@ -21,6 +21,7 @@ $rows = $sql->fetchall(PDO::FETCH_ASSOC);
     <Title>Lista</Title>
 
     <script>
+       /* Função para Validação */
       function Alert(){
       if(confirm("Tem certeza que deseja deletar?")){
         window.location.href= "delete.php?deleteid_pessoa=<?php echo($rows[0]["id_pessoa"])?>";
@@ -29,19 +30,16 @@ $rows = $sql->fetchall(PDO::FETCH_ASSOC);
       } 
 
       }
-
     </script>
 
-</head>
+  </head>
 
-<body>
-<div class="container">
-    <button class="btn btn-success my-4"> <a href="usuario.php" 
-    class="text-light"> Add Novo Cadastro</a>
-    </button>
+  <body>
+    <div class="container">
+    <button class="btn btn-success my-4"> <a href="usuario.php" class="text-light"> Add Novo Cadastro</a></button>
     
     <table class="table">
-  <thead class="table-dark">
+    <thead class="table-dark">
     <tr> 
       <th scope="col">ID</th>
       <th scope="col">Nome</th>
@@ -52,14 +50,15 @@ $rows = $sql->fetchall(PDO::FETCH_ASSOC);
       <th scope="col">Editar</th>
       <th scope="col">Excluir</th>
     </tr>
-  </thead>
-  <tbody>
+    </thead>
+
+    <tbody>
       
     <?php
-    $sql =$con->query("SELECT * FROM pessoas order by id_pessoa ASC");
-    $rows = $sql->fetchall(PDO::FETCH_ASSOC);
+      $sql =$con->query("SELECT * FROM pessoas order by id_pessoa ASC");
+      $rows = $sql->fetchall(PDO::FETCH_ASSOC);
 
-   foreach($rows as $row) {
+      foreach($rows as $row) {
     
        echo "<tr class='table-light'>";  // abre uma linha
        echo("<td>".$row["id_pessoa"]."</td>");
@@ -77,10 +76,10 @@ $rows = $sql->fetchall(PDO::FETCH_ASSOC);
    
     ?>
 
-  </tbody>
-</table>
-</div>
-</body>
-</html>
+    </tbody>
+    </table>
+    </div>
+    </body>
+    </html>
 
 

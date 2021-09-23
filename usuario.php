@@ -1,6 +1,6 @@
 <?php
 include 'config/db.php';
-
+//chama o arquivo de conexão com o Banco de dados
 ?>
 <!doctype html>
 <html lang="en">
@@ -15,6 +15,7 @@ include 'config/db.php';
 
     <title>Página Inicial</title><br>
     <script>
+    /* Função para Validação */
     function funcao1()
     {
     alert("Cadastrado efetuado com sucesso!");
@@ -26,7 +27,6 @@ include 'config/db.php';
     <div style="text-align:center; font-size: 3.1em; color: #0000CD;">Olá, Seja Bem-Vindo!
     <p>Faça seu cadastro</p></div>
 
-
     <div class="container">
     <form action="insert.php" method="post">
     <div class="form-group">
@@ -34,30 +34,34 @@ include 'config/db.php';
     <input type="text" class="form-control" placeholder="Nome Completo" name="nome">
     </div>
    <br>
+
     <div class="form-group">
     <label>Endereço:</label>
     <input type="text" class="form-control" placeholder="Endereço" name="endereco">
     </div>
     <br>
+
     <div class="form-group">
     <label>Telefone:</label>
     <input type="number" class="form-control" placeholder="Telefone" name="telefone">
     </div>
     <br>
+
     <div class="form-group">
     <label>Email:</label>
     <input type="email" class="form-control" placeholder="Email" name="email">
     </div>
     <br>
+
     <div class="form-group">
     <label>Data Nascimento:</label>
     <input type="date" class="form-control" placeholder="Data Nascimento" name="data_nascimento">
     </div>
     <br>
-  <button type="submit" name="submit" class="btn btn-primary" onclick="funcao1()">Salvar</button>
-</form>
+
+     <button type="submit" name="submit" class="btn btn-primary" onclick="funcao1()">Salvar</button>
+    </form>
     </div>
-   
-  </body>
+    </body>
 </html>
 

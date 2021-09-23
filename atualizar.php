@@ -27,7 +27,7 @@ if(isset($_POST['submit'])){
   $result = $sql->execute();
 
   header('Location: listar.php'); 
-  //header( ($result) ? 'Location: listar.php' : 'Location: index.php'); 
+
   
   }
   

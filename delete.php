@@ -4,7 +4,6 @@ include 'config/db.php';
 //recuperar o valor de um diretorio que estou passando pela url.
 $id_pessoa = ($_GET['deleteid_pessoa'] != '' ? $_GET['deleteid_pessoa'] : $id_pessoa );
 
-// var_dump($id_pessoa);
 
 //Metodo para exclusão de registros  
 $pdo = $con;

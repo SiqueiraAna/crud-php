@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
     $result= $sql->execute([$nome,$endereco,$telefone,$email,$data_nascimento]);
 
     if($result){
-      header("Location:listar.php");
+      header("Location:listar.php"); // redirecionamento de página 
         $message = 'Cadastrado com sucesso';
     }else{
       die('Não ');
