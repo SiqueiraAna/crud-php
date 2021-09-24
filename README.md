@@ -2,5 +2,5 @@
 
 🚀Cadastro de Usuário
 
-
+- Create, Read, Update, Delete
 

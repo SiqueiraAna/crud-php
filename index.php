@@ -19,7 +19,7 @@ include ('db.php');
   <body>
     
     <div class="container my-5">
-    <form  method="post">
+    <form method="post">
     <div class="form-group">
     <label>Nome</label>
     <input type="text" class="form-control" placeholder="Nome Completo" name="nome" autocomplete="off">

@@ -24,7 +24,7 @@ $rows = $sql->fetchall(PDO::FETCH_ASSOC);
        /* Função para Validação */
       function Alert(){
       if(confirm("Tem certeza que deseja deletar?")){
-        window.location.href= "delete.php?deleteid_pessoa=<?php echo($rows[0]["id_pessoa"])?>";
+        
       }else{
         return false;
       } 
@@ -67,8 +67,8 @@ $rows = $sql->fetchall(PDO::FETCH_ASSOC);
        echo("<td>".$row["telefone"]."</td>");
        echo("<td>".$row["email"]."</td>");
        echo("<td>" .(new DateTime($row["data_nascimento"]))->format('d/m/Y')."</td>"); 
-       echo '<td><button class="btn btn-warning btn-xs" name="id_pessoa" ><a " href="update.php?updateid_pessoa='.$row['id_pessoa'].'" class="text-light">Update</a></button></td>';
-       echo '<td><button class="btn btn-danger btn-xs" name="id_pessoa" ><a " onclick="Alert()" "class="text-light">Delete</a></button></td>';
+       echo '<td><button class="btn btn-warning btn-xs" name="id_pessoa" ><a " href="update.php?updateid_pessoa='.$row['id_pessoa'].'" class="text-light">Editar</a></button></td>';
+       echo '<td><button class="btn btn-danger btn-xs" name="id_pessoa" ><a " href="delete.php?deleteid_pessoa='.$row['id_pessoa'].'" onclick="Alert()" "class="text-light">Excluir</a></button></td>';
         
        echo "</tr>";  // fecha linha
 
@@ -78,6 +78,7 @@ $rows = $sql->fetchall(PDO::FETCH_ASSOC);
 
     </tbody>
     </table>
+    
     </div>
     </body>
     </html>
