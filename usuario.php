@@ -21,7 +21,7 @@
     const data_nascimento = formCadastro.data_nascimento.value;
   
     // Verificar se o nome está vazio
-      if(nome == ""){
+      if(!nome){
         alert ("O campo Nome é obrigatório");
         formCadastro.nome.focus();
         return false; 
@@ -64,37 +64,42 @@
     <p>Faça seu cadastro</p></div>
 
     <div class="container">
-    <form id="formCadastro" name="formCadastro" action="insert.php" method="post">
+    <form method="post" action="insert.php">
     <div class="form-group">
-    <label>Nome:</label>
-    <input type="text" required x-moz-errormessage="Ops." class="form-control" placeholder="Nome Completo" name="nome">
-    </div>
-   <br>
 
-    <div class="form-group">
-    <label>Endereço:</label>
-    <input type="text"  required x-moz-errormessage="Ops." class="form-control" placeholder="Endereço" name="endereco">
-    </div>
-    <br>
+        <label>Nome Completo:</label>
+        <input required pattern=".*\S+.*"  oninvalid="setCustomValidity('Por favor digite o nome')" onchange="try{setCustomValidity('')}catch(e){}"  
+        type="text" class="form-control" placeholder=" Digite seu nome" name="nome" id="nome" >
+        </div>
+        <br>
 
-    <div class="form-group">
-    <label>Telefone:</label>
-    <input type="number" required x-moz-errormessage="Ops." required
-     maxlength="10" class="form-control" placeholder="Telefone" name="telefone">
-    </div>
-    <br>
+        <div class="form-group">
+        <label>Endereço:</label>
+        <input required pattern=".*\S+.*"  oninvalid="setCustomValidity('Por favor digite o endereço')" onchange="try{setCustomValidity('')}catch(e){}"
+        type="text" class="form-control" placeholder="Digite seu endereço" name="endereco" id="endereco">
+        </div>
+        <br>
 
-    <div class="form-group">
-    <label>Email:</label>
-    <input type="email" required x-moz-errormessage="Ops."  class="form-control" placeholder="Email" name="email">
-    </div>
-    <br>
+        <div class="form-group">
+        <label>Telefone:</label>
+        <input required pattern=".*\S+.*"  oninvalid="setCustomValidity('Por favor digite o telefone')" onchange="try{setCustomValidity('')}catch(e){}" 
+        type="number" class="form-control" placeholder="Digite seu telefone" name="telefone" id="telefone">
+        </div>
+        <br>
 
-    <div class="form-group">
-    <label>Data Nascimento:</label>
-    <input type="date" required x-moz-errormessage="Ops."  class="form-control" placeholder="Data Nascimento" name="data_nascimento">
-    </div>
-    <br>
+        <div class="form-group">
+        <label>E-mail:</label>
+        <input required pattern=".*\S+.*"  oninvalid="setCustomValidity('Por favor digite o e-mail')" onchange="try{setCustomValidity('')}catch(e){}" 
+        type="text" class="form-control" placeholder="Digite seu e-mail" name="email" id="email">
+        </div>
+        <br>
+
+        <div class="form-group">
+        <label>Data Nascimento:</label>
+        <input required pattern=".*\S+.*"  oninvalid="setCustomValidity('Por favor digite o e-mail')" onchange="try{setCustomValidity('')}catch(e){}" 
+        type="date" class="form-control" placeholder="Data Nascimento" name="data_nascimento" id="data_nascimento">
+        </div>
+        <br>
 
      <button type="submit" name="submit" class="btn btn-primary" onclick="funcaoAlert()">Salvar</button>
     </form>

@@ -25,9 +25,10 @@ $rows = $sql->fetchall(PDO::FETCH_ASSOC);
       function Alert(){
       if(confirm("Tem certeza que deseja deletar?")){
         
-      }else{
-        return false;
-      } 
+   
+      } else {
+      return false;
+  }
 
       }
     </script>

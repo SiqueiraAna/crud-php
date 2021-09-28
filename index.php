@@ -22,7 +22,7 @@ include ('db.php');
     <form method="post">
     <div class="form-group">
     <label>Nome</label>
-    <input type="text" class="form-control" placeholder="Nome Completo" name="nome" autocomplete="off">
+    <input type="text" class="form-control" title="nomee" placeholder="Nome Completo" name="nome" autocomplete="off">
     </div>
    <br>
 
