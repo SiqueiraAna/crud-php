@@ -1,11 +1,11 @@
-<?php
+  <?php
 //chama o arquivo de conexão com o Banco de dados
-include 'config/db.php';
+  include 'config/db.php';
 
-$sql =$con->query("SELECT * FROM pessoas order by id_pessoa ASC");
-$rows = $sql->fetchall(PDO::FETCH_ASSOC);
+  $sql =$con->query("SELECT * FROM pessoas order by id_pessoa ASC");
+  $rows = $sql->fetchall(PDO::FETCH_ASSOC);
 
-?>
+  ?>
   <!doctype html>
   <html lang="en">
 
@@ -14,25 +14,18 @@ $rows = $sql->fetchall(PDO::FETCH_ASSOC);
     <meta charset=UTF-8>
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+   <!-- Sweealert2-->
+   <script src="/cadastro/node_modules/sweetalert/dist/sweetalert.min.js"></script>
+    
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <Title>Lista</Title>
 
-    <script>
-       /* Função para Validação */
-      function Alert(){
-      if(confirm("Tem certeza que deseja deletar?")){
-        
-   
-      } else {
-      return false;
-  }
-
-      }
-    </script>
-
+    
+      
   </head>
 
   <body>
@@ -68,19 +61,43 @@ $rows = $sql->fetchall(PDO::FETCH_ASSOC);
        echo("<td>".$row["telefone"]."</td>");
        echo("<td>".$row["email"]."</td>");
        echo("<td>" .(new DateTime($row["data_nascimento"]))->format('d/m/Y')."</td>"); 
-       echo '<td><button class="btn btn-warning btn-xs" name="id_pessoa" ><a " href="update.php?updateid_pessoa='.$row['id_pessoa'].'" class="text-light">Editar</a></button></td>';
-       echo '<td><button class="btn btn-danger btn-xs" name="id_pessoa" ><a " href="delete.php?deleteid_pessoa='.$row['id_pessoa'].'" onclick="Alert()" "class="text-light">Excluir</a></button></td>';
+       echo '<td><button class="btn btn-warning btn-xs" name="id_pessoa" ><a href="update.php?updateid_pessoa='.$row['id_pessoa'].'" class="text-light">Editar</a></button></td>';
+       echo '<td><button class="btn btn-danger btn-xs" name="id_pessoa" ><a href="delete.php?deleteid_pessoa='.$row['id_pessoa'].'" onclick="alertDelete()">Excluir</a></button></td>';
         
        echo "</tr>";  // fecha linha
-
+        
    }
    
     ?>
 
+      
+
     </tbody>
     </table>
-    
+
     </div>
+    <script>
+      function alertDelete() {
+        Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      });
+      }
+      
+    </script>
     </body>
     </html>
 

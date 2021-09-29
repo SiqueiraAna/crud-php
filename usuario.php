@@ -96,8 +96,7 @@
 
         <div class="form-group">
         <label>Data Nascimento:</label>
-        <input required pattern=".*\S+.*"  oninvalid="setCustomValidity('Por favor digite o e-mail')" onchange="try{setCustomValidity('')}catch(e){}" 
-        type="date" class="form-control" placeholder="Data Nascimento" name="data_nascimento" id="data_nascimento">
+        <input required type="date" class="form-control" placeholder="Data Nascimento" name="data_nascimento" id="data_nascimento">
         </div>
         <br>
 
