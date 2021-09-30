@@ -2,8 +2,8 @@
 //chama o arquivo de conexão com o Banco de Dados 
 include 'config/db.php';
 //recuperar o valor de um diretorio que estou passando pela url.
-$id_pessoa = ($_GET['deleteid_pessoa'] != '' ? $_GET['deleteid_pessoa'] : $id_pessoa );
 
+$id_pessoa = ($_POST['idPessoa']);
 
 //Metodo para exclusão de registros  
 $pdo = $con;
@@ -12,9 +12,5 @@ $sql = "DELETE FROM pessoas WHERE id_pessoa = :id_pessoa";
 $sql = $pdo->prepare($sql);
 $sql->execute(array($id_pessoa));
 
-
-
-header("Location:listar.php"); // redirecionamento de página 
- 
 
 ?>

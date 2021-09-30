@@ -1,5 +1,5 @@
 <?php
-//chama o arquivo de conexão com o bd
+//chama o arquivo de conexão com o banco de dados
 include 'config/db.php';
 
 

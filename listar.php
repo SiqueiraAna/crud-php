@@ -16,6 +16,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
    <!-- Sweealert2-->
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+   <script src="sweetalert2/dist/sweetalert2.all.min.js"></script>
    <script src="/cadastro/node_modules/sweetalert/dist/sweetalert.min.js"></script>
     
 
@@ -24,8 +26,6 @@
 
     <Title>Lista</Title>
 
-    
-      
   </head>
 
   <body>
@@ -61,43 +61,20 @@
        echo("<td>".$row["telefone"]."</td>");
        echo("<td>".$row["email"]."</td>");
        echo("<td>" .(new DateTime($row["data_nascimento"]))->format('d/m/Y')."</td>"); 
-       echo '<td><button class="btn btn-warning btn-xs" name="id_pessoa" ><a href="update.php?updateid_pessoa='.$row['id_pessoa'].'" class="text-light">Editar</a></button></td>';
-       echo '<td><button class="btn btn-danger btn-xs" name="id_pessoa" ><a href="delete.php?deleteid_pessoa='.$row['id_pessoa'].'" onclick="alertDelete()">Excluir</a></button></td>';
-        
+       echo '<td><button class="btn btn-warning btn-xs" name="id_pessoa"><a href="update.php?updateid_pessoa='.$row['id_pessoa'].'" class="text-light">Editar</a></button></td>';
+       echo '<td><button type="button" class="btn btn-danger delete-btn" data-id="'.$row['id_pessoa'].'">Deletar</button></td>';
        echo "</tr>";  // fecha linha
         
-   }
+      }
    
     ?>
 
-      
-
     </tbody>
     </table>
-
     </div>
-    <script>
-      function alertDelete() {
-        Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire(
-            'Deleted!',
-            'Your file has been deleted.',
-            'success'
-          )
-        }
-      });
-      }
-      
-    </script>
+
+    <script src="/cadastro/assets/js/JQuery/jquery-3.6.0.min.js"></script>
+    <script src="/cadastro/assets/js/delete.js"></script>
     </body>
     </html>
 
