@@ -4,11 +4,9 @@ $(document).ready(function () {
     e.preventDefault();
     let idPessoa = $(this).data('id')
     
-    console.log(idPessoa)
-
     swal({
-    title: "Are you sure?",
-    text: "Once deleted, you will not be able to recover this imaginary file!",
+    title: "Tem certeza que quer excluir?",
+    text: "ATENÇÃO!! Uma vez excluído, não poderá voltar a informação!",
     icon: "warning",
     buttons: true,
     dangerMode: true,
@@ -24,21 +22,21 @@ $(document).ready(function () {
     }).done(function(result){
     console.log(result);
     
-    if(result == "Sucesso"){
-    swal("Poof! Your imaginary file has been deleted!", {
+    if(result == true){
+    swal("Deletado com sucesso!", {
     icon: "success",
     });
     setTimeout(function () {
     window.location.href="http://localhost/cadastro/listar.php";
     }, 1500);
     }else{
-    swal("Hoje não", {
+    swal("Erro ao deletar usuário", {
     icon: "error",
     });
     }
     });
     } else {
-    swal("Your imaginary file is safe!");
+
     }
     });
     console.log(idPessoa)

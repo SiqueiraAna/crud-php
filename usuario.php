@@ -55,7 +55,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
-    <title>Página Inicial</title><br>
+    <title>Cadastro</title><br>
    
     
   </head>
@@ -64,8 +64,9 @@
     <p>Faça seu cadastro</p></div>
 
     <div class="container">
-    <form method="post" action="insert.php">
-    <div class="form-group">
+    <form  method="post" action="insert.php">
+        <!-- area de campos do form -->
+    <div  class="form-group">
 
         <label>Nome Completo:</label>
         <input required pattern=".*\S+.*"  oninvalid="setCustomValidity('Por favor digite o nome')" onchange="try{setCustomValidity('')}catch(e){}"  
@@ -73,7 +74,7 @@
         </div>
         <br>
 
-        <div class="form-group">
+        <div  class="form-group">
         <label>Endereço:</label>
         <input required pattern=".*\S+.*"  oninvalid="setCustomValidity('Por favor digite o endereço')" onchange="try{setCustomValidity('')}catch(e){}"
         type="text" class="form-control" placeholder="Digite seu endereço" name="endereco" id="endereco">
@@ -84,6 +85,7 @@
         <label>Telefone:</label>
         <input required pattern=".*\S+.*"  oninvalid="setCustomValidity('Por favor digite o telefone')" onchange="try{setCustomValidity('')}catch(e){}" 
         type="number" class="form-control" placeholder="Digite seu telefone" name="telefone" id="telefone">
+        
         </div>
         <br>
 
@@ -100,7 +102,9 @@
         </div>
         <br>
 
+  
      <button type="submit" name="submit" class="btn btn-primary" onclick="funcaoAlert()">Salvar</button>
+  
     </form>
     </div>
     </body>
