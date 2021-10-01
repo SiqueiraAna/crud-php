@@ -30,7 +30,7 @@ $(document).ready(function () {
     window.location.href="http://localhost/cadastro/listar.php";
     }, 1500);
     }else{
-    swal("Erro ao deletar usuário", {
+    swal("Erro ao deletar usuário!", {
     icon: "error",
     });
     }
