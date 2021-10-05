@@ -25,6 +25,7 @@ include ('db.php');
     <input type="text" class="form-control" title="nomee" placeholder="Nome Completo" name="nome" autocomplete="off">
     </div>
    <br>
+   
 
     <div class="form-group">
     <label>Endereço</label>

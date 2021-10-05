@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
     // var_dump($_POST);
     
 
-    $sql = $con->prepare ("INSERT INTO pessoas (nome,endereco,telefone,email,data_nascimento) values (?,?,?,?,?)");
+    $sql = $con->prepare ("INSERT INTO usuario (nome,endereco,telefone,email,data_nascimento) values (?,?,?,?,?)");
     $result= $sql->execute([$nome,$endereco,$telefone,$email,$data_nascimento]);
 
     if($result){

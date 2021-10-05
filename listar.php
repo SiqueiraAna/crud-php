@@ -2,7 +2,7 @@
 //chama o arquivo de conexão com o Banco de dados
   include 'config/db.php';
 
-  $sql =$con->query("SELECT * FROM pessoas order by id_pessoa ASC");
+  $sql =$con->query("SELECT * FROM usuario order by id_pessoa ASC");
   $rows = $sql->fetchall(PDO::FETCH_ASSOC);
 
   ?>
@@ -49,7 +49,7 @@
     <tbody>
       
     <?php
-      $sql =$con->query("SELECT * FROM pessoas order by id_pessoa ASC");
+      $sql =$con->query("SELECT * FROM usuario order by id_pessoa ASC");
       $rows = $sql->fetchall(PDO::FETCH_ASSOC);
 
       foreach($rows as $row) {

@@ -8,7 +8,7 @@ $id_pessoa = ($_POST['idPessoa']);
 //Metodo para exclusão de registros  
 $pdo = $con;
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$sql = "DELETE FROM pessoas WHERE id_pessoa = :id_pessoa";
+$sql = "DELETE FROM usuario WHERE id_pessoa = :id_pessoa";
 $sql = $pdo->prepare($sql);
 $result = $sql->execute(array($id_pessoa));
 

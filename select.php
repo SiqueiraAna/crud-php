@@ -3,7 +3,7 @@
 include 'config/db.php';
 
 //Metodo para consulta de pessoas  
-    $sql = 'SELECT * FROM pessoas';
+    $sql = 'SELECT * FROM usuario';
     $result = $con->query($sql);
     $rows = $result->fetchAll(PDO::FETCH_ASSOC);
     

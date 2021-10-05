@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
   $data_nascimento = $_POST['data_nascimento'];
 
 
-  $sql = "UPDATE pessoas SET nome = :nome, endereco = :endereco, telefone = :telefone, email = :email, 
+  $sql = "UPDATE usuario SET nome = :nome, endereco = :endereco, telefone = :telefone, email = :email, 
   data_nascimento = :data_nascimento WHERE id_pessoa = :id_pessoa";
   $sql = $con->prepare($sql);
 

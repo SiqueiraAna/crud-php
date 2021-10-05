@@ -6,7 +6,7 @@
      
     $pdo = $con;
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "SELECT * FROM pessoas WHERE id_pessoa = :id_pessoa";
+    $sql = "SELECT * FROM usuario WHERE id_pessoa = :id_pessoa";
     $sql = $pdo->prepare($sql);
     $sql->bindParam(':id_pessoa', $id_pessoa);
     $result = $sql->execute(array($id_pessoa));
