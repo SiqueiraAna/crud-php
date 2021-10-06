@@ -1,4 +1,5 @@
 <?php
+
 //chama o arquivo de conexão com o bd
 include 'config/db.php';
 
@@ -13,6 +14,25 @@ if(isset($_POST['submit'])){
     $data_nascimento = $_POST['data_nascimento'];
 
     // var_dump($_POST);
+
+    //Consulta dos dados
+    $pdo = $con;
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $sql = "SELECT * FROM usuario WHERE telefone = :telefone";
+    $sql = $pdo->prepare($sql);
+    $sql->bindParam(':telefone', $telefone);
+    $Existstelephone = $sql->execute(array($telefone)); // Resultado True ou False;
+    // $rows= $sql->fetchAll(PDO::FETCH_ASSOC); // Retorna o dado do banco, caso precise ser exibido em tela.
+      
+    // var_dump($result);
+
+    if($Existstelephone){
+
+      header("Location:usuario.php?mensagem=erro"); // redirecionamento de página 
+
+    }else{
+      die('Não ');
+    }
     
 
     $sql = $con->prepare ("INSERT INTO usuario (nome,endereco,telefone,email,data_nascimento) values (?,?,?,?,?)");

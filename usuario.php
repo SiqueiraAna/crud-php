@@ -1,4 +1,5 @@
   <?php
+ 
     //chama o arquivo de conexão com o Banco de dados
   include 'config/db.php';
   
@@ -10,10 +11,12 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <script>
     /* Função Validar */
-    function funcaoAlert()
-    {
+
+    function funcaoAlert(){
+
     const nome = formCadastro.nome.value;
     const endereco = formCadastro.endereco.value;
     const telefone = formCadastro.telefone.value;
@@ -22,41 +25,55 @@
   
     // Verificar se o nome está vazio
       if(!nome){
-        alert ("O campo Nome é obrigatório");
+        alert ("Esse campo é obrigatório");
+        // Deixa o input com o focus
         formCadastro.nome.focus();
         return false; 
       }
 
       if(endereco == ""){
-        alert ("O campo Endereço é obrigatório");
+        alert ("Esse campo é obrigatório");
+        // Deixa o input com o focus
         formCadastro.endereco.focus();
-        return false; 
+        return false; 0 
       }
 
       if(telefone == ""){
-        alert ("O campo Telefone é obrigatório");
+        alert ("Esse campo é obrigatório");
+        // Deixa o input com o focus
         formCadastro.telefone.focus();
         return false; 
       }
 
       if(email == ""){
-        alert ("O campo E-mail é obrigatório");
+        alert ("Esse campo é obrigatório");
+        // Deixa o input com o focus
         formCadastro.email.focus();
         return false; 
       }
 
       if(data_nascimento == ""){
-        alert ("O campo Data Nascimento é obrigatório");
+        alert ("Esse campo é obrigatório");
+        // Deixa o input com o focus
         formCadastro.data_nascimento.focus();
         return false; 
       }
     }
+    //
+    const queryString = window.location.search
+    const urlParams = new URLSearchParams(queryString);
+    console.log(urlParams.get('mensagem'))
+    if(telefone !=0){
+      
+    }
+    
+
     </script>
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <title>Cadastro</title><br>
-   
     
   </head>
   <body> 
@@ -71,6 +88,7 @@
         <label>Nome Completo:</label>
         <input required pattern=".*\S+.*"  oninvalid="setCustomValidity('Por favor digite o nome')" onchange="try{setCustomValidity('')}catch(e){}"  
         type="text" class="form-control" placeholder=" Digite seu nome" name="nome" id="nome" >
+
         </div>
         <br>
 
@@ -85,7 +103,8 @@
         <label>Telefone:</label>
         <input required pattern=".*\S+.*"  oninvalid="setCustomValidity('Por favor digite o telefone')" onchange="try{setCustomValidity('')}catch(e){}" 
         type="number" class="form-control" placeholder="Digite seu telefone" name="telefone" id="telefone">
-        
+
+      
         </div>
         <br>
 
