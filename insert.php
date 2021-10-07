@@ -18,20 +18,21 @@ if(isset($_POST['submit'])){
     //Consulta dos dados
     $pdo = $con;
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "SELECT * FROM usuario WHERE telefone = :telefone";
+    $sql = "SELECT * FROM usuario WHERE email = :email";
     $sql = $pdo->prepare($sql);
-    $sql->bindParam(':telefone', $telefone);
-    $Existstelephone = $sql->execute(array($telefone)); // Resultado True ou False;
+    $sql->bindParam(':email', $email);
+    $Existeemail= $sql->execute(array($email)); // Resultado True ou False;
     // $rows= $sql->fetchAll(PDO::FETCH_ASSOC); // Retorna o dado do banco, caso precise ser exibido em tela.
       
-    // var_dump($result);
+   
 
-    if($Existstelephone){
+    if($Existeemail){
+      // echo 'E-mail Inválido,volte e coloque outro e-mail';
 
-      header("Location:usuario.php?mensagem=erro"); // redirecionamento de página 
-
+      header('Location: teste.php'); 
+ 
     }else{
-      die('Não ');
+      header('location: listar.php');
     }
     
 

@@ -59,14 +59,11 @@
         return false; 
       }
     }
-    //
-    const queryString = window.location.search
-    const urlParams = new URLSearchParams(queryString);
-    console.log(urlParams.get('mensagem'))
-    if(telefone !=0){
-      
-    }
-    
+        //
+        const queryString = window.location.search
+        const urlParams = new URLSearchParams(queryString);
+        console.log(urlParams.get('mensagem'))
+
 
     </script>
 
@@ -96,6 +93,7 @@
         <label>Endereço:</label>
         <input required pattern=".*\S+.*"  oninvalid="setCustomValidity('Por favor digite o endereço')" onchange="try{setCustomValidity('')}catch(e){}"
         type="text" class="form-control" placeholder="Digite seu endereço" name="endereco" id="endereco">
+        
         </div>
         <br>
 
@@ -111,7 +109,8 @@
         <div class="form-group">
         <label>E-mail:</label>
         <input required pattern=".*\S+.*"  oninvalid="setCustomValidity('Por favor digite o e-mail')" onchange="try{setCustomValidity('')}catch(e){}" 
-        type="text" class="form-control" placeholder="Digite seu e-mail" name="email" id="email">
+        type="text" onblur="validarEmail()" onfocus="redefinirMsg()" class="form-control" placeholder="Digite seu e-mail" name="email" id="email">
+        <span id="error-email"></span>
         </div>
         <br>
 
